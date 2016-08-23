@@ -1,0 +1,8 @@
+test:
+  override:
+    - |
+      if ( [ $CIRCLE_BRANCH = 'staging' ] || [ $CIRCLE_BRANCH = 'master' ] ); then
+        exit 1
+      else
+        exit 1
+      fi
