@@ -2,7 +2,8 @@ test:
   override:
     - |
       if ( [ $CIRCLE_BRANCH = 'staging' ] || [ $CIRCLE_BRANCH = 'master' ] ); then
-        echo Docker
+        ./gradlew test itest
+        mkdir -p $CIRCLE_TEST_REPORTS/junit/
       else
         ./gradlew test itest
         mkdir -p $CIRCLE_TEST_REPORTS/junit/
