@@ -3,6 +3,8 @@ test:
     - |
       if ( [ $CIRCLE_BRANCH = 'staging' ] || [ $CIRCLE_BRANCH = 'master' ] ); then
         exit 1
+        exit 0
       else
         exit 1
+        exit 0
       fi
