@@ -2,9 +2,8 @@ test:
   override:
     - |
       if ( [ $CIRCLE_BRANCH = 'staging' ] || [ $CIRCLE_BRANCH = 'master' ] ); then
-        exit 1
-        exit 0
+        echo Docker
       else
-        exit 1
-        exit 0
+        ./gradlew test itest
+        mkdir -p $CIRCLE_TEST_REPORTS/junit/
       fi
