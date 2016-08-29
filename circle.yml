@@ -1,12 +1,13 @@
 test:
   pre:
-    - set -eo pipefail
   override:
     - |
       if ( [ $CIRCLE_BRANCH = 'staging' ] || [ $CIRCLE_BRANCH = 'master' ] ); then
+        set -eo pipefail
         ./gradlew test itest
         mkdir -p $CIRCLE_TEST_REPORTS/junit/
       else
+        set -eo pipefail
         ./gradlew test itest
         mkdir -p $CIRCLE_TEST_REPORTS/junit/
       fi
