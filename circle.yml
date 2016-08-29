@@ -1,4 +1,6 @@
 test:
+  pre:
+    - set -eo pipefail
   override:
     - |
       if ( [ $CIRCLE_BRANCH = 'staging' ] || [ $CIRCLE_BRANCH = 'master' ] ); then
